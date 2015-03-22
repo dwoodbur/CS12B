@@ -1,0 +1,83 @@
+head	1.1;
+access;
+symbols;
+locks;
+comment	@ * @;
+
+
+1.1
+date	2013.03.01.00.26.37;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@-
+@
+text
+@// $Id: queue.c,v 1.8 2013-02-15 17:17:42-08 - - $
+
+#include <assert.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "queue.h"
+
+#define STUBPRINTF(...) fprintf (stderr, __VA_ARGS__);
+
+static char *queue_tag = "struct queue";
+static char *queue_node_tag = "struct queue_node";
+
+typedef struct queue_node queue_node;
+struct queue_node {
+   char *tag;
+   queue_item_t item;
+   queue_node *link;
+};
+
+struct queue {
+   char *tag;
+   queue_node *front;
+   queue_node *rear;
+};
+
+queue *new_queue (void) {
+   STUBPRINTF ("return NULL\n");
+   return NULL;
+}
+
+void free_queue (queue *this) {
+   assert (is_queue (this));
+   assert (isempty_queue (this));
+   memset (this, 0, sizeof (queue));
+   free (this);
+}
+
+void insert_queue (queue *this, queue_item_t item) {
+   assert (is_queue (this));
+   STUBPRINTF ("item =\n\t\"%s\"\n", item);
+}
+
+queue_item_t remove_queue (queue *this) {
+   assert (is_queue (this));
+   assert (! isempty_queue (this));
+   STUBPRINTF ("return NULL\n");
+   return NULL;
+}
+
+bool isempty_queue (queue *this) {
+   assert (is_queue (this));
+   return this->front == NULL;
+}
+
+bool is_queue (queue *this) {
+   return this != NULL && this->tag == queue_tag;
+}
+
+@

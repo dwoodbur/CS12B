@@ -1,0 +1,4 @@
+#!/bin/sh
+# $Id$
+# Dylan Woodbury dwoodbur
+gcc -g -O0 -Wall -Wextra -std=gnu99 crpn.c -o crpn

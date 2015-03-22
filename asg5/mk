@@ -1,0 +1,4 @@
+#!/bin/sh
+# $Id$
+# Dylan Woodbury dwoodbur
+gcc -g -O0 -Wall -Wextra -std=gnu99 strhash.h debugf.c hashset.c scanner.c spellchk.c strhash.c -o spellchk 

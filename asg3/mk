@@ -1,0 +1,6 @@
+#!/bin/sh
+# $Id$
+javac airport.java
+echo Main-class: airport >Manifest
+jar cvfm airport Manifest airport.class treemap.class 'treemap$tree.class' misc.class
+chmod +x airport 

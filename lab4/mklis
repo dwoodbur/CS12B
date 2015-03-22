@@ -1,0 +1,5 @@
+#!/bin/sh
+# $Id: mklis,v 1.2 2013-01-29 14:59:20-08 - - $
+cid + $0 *.c *.perl
+mkc *.c
+mkpspdf ../lab4c-stdio.misc.ps *.c *.perl

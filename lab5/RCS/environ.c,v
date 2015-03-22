@@ -1,0 +1,38 @@
+head	1.1;
+access;
+symbols;
+locks;
+comment	@ * @;
+
+
+1.1
+date	2013.02.14.17.19.16;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@-
+@
+text
+@// $Id: list1.c,v 1.3 2013-02-08 18:00:41-08 - - $
+
+#include <assert.h>
+#include <stdio.h>
+
+
+int main (int argc, char **argv) {
+   extern char **environ;
+   for(char curr = *environ; curr != NULL; *environ++){
+      printf("%c", curr);
+   } 
+
+
+   return 0;
+}
+@
